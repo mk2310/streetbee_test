@@ -1,0 +1,18 @@
+
+
+
+# Ignore the default SQLite database.
+
+
+# Ignore all logfiles and tempfiles.
+
+
+
+.byebug_history
+
+image_processor/sneakers/*
+worksheet_registry/.bundle
+worksheet_registry/log/*
+worksheet_registry/tmp/*
+worksheet_registry/db/schema.rb
+worksheet_registry/config/database.yml
