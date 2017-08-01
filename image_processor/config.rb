@@ -15,6 +15,7 @@ module ImageProcessor
     end
 
     def load_sneakers
+      File.new('sneakers/sneakers.log', 'w+') unless File.exist? 'sneakers/sneakers.log'
       Sneakers.configure  :heartbeat => 20,
                           :amqp => 'amqp://guest:guest@172.21.0.1:5672',
                           :vhost => '/',

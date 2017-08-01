@@ -6,7 +6,7 @@ class Worksheet < ActiveRecord::Base
   def processing
     if self
       .attachments
-      .where('attachments.state = 2')
+      .where('attachments.state = ?', Attachment.states['processed'])
       .count ==
     self
       .attachments

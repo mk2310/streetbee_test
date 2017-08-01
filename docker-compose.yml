@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   rabbit:
     image: rabbitmq:3-management
@@ -8,6 +8,7 @@ services:
       - 15672:15672
   db:
     image: "postgres:9.4"
+    hostname: db
     ports:
       - 5432:5432
   redis:
@@ -28,6 +29,7 @@ services:
       - worksheet_registry
     ports:
       - 4340:4340
+    hostname: image_processor
   worksheet_registry:
     build: ./worksheet_registry
     command: bundle exec rails s -b 0.0.0.0 -p 4330
@@ -39,3 +41,4 @@ services:
       - rabbit
     ports:
       - 4330:4330
+    hostname: worksheet_registry
